@@ -12,8 +12,8 @@ body {
   background:#fff;
   color:#222b39;
   font-family:Arial,"Noto Sans KR",sans-serif;
-  font-size:16px;
-  line-height:1.75;
+  font-size:18px;
+  line-height:1.8;
 }
 a {
   color:inherit;
@@ -37,25 +37,27 @@ a:focus-visible,button:focus-visible {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:24px;
+  gap:32px;
   width:100%;
-  max-width:1120px;
+  max-width:1320px;
   margin:0 auto;
-  padding:32px 40px;
+  padding:40px 56px;
   border-bottom:1px solid #e3e7eb;
   background:#fff;
 }
 .brand {
   display:flex;
   align-items:center;
-  gap:14px;
   flex-shrink:0;
   text-decoration:none;
-  font-size:26px;
-  letter-spacing:-1px;
-  font-weight:750;
-  line-height:1.1;
   color:#163957;
+}
+.brand-logo {
+  display:block;
+  width:auto;
+  height:138px;
+  max-width:760px;
+  object-fit:contain;
 }
 .brand small {
   display:block;
@@ -89,17 +91,18 @@ nav {
   align-items:center;
   justify-content:flex-end;
   flex-wrap:wrap;
-  gap:5px;
+  gap:8px;
   margin:0;
 }
 nav a {
   text-decoration:none;
   color:#697584;
-  padding:12px 10px;
+  padding:14px 13px;
   border-bottom:2px solid transparent;
-  font-size:14px;
+  font-size:16px;
   line-height:1.5;
   white-space:nowrap;
+  text-transform:uppercase;
 }
 nav a:hover {
   color:#163957;
@@ -113,9 +116,9 @@ nav a.active {
 .main {
   flex:1;
   width:100%;
-  max-width:1120px;
+  max-width:1320px;
   margin:0 auto;
-  padding:32px 40px 0;
+  padding:42px 56px 0;
 }
 .topline {
   display:flex;
@@ -123,7 +126,7 @@ nav a.active {
   align-items:center;
   padding-bottom:19px;
   border-bottom:1px solid #e5e9ed;
-  font-size:12px;
+  font-size:13px;
   letter-spacing:1.8px;
   color:#89929d;
 }
@@ -133,28 +136,28 @@ nav a.active {
 }
 .eyebrow {
   color:#6c8397;
-  font-size:12px;
+  font-size:13px;
   letter-spacing:2px;
   text-transform:uppercase;
-  margin:37px 0 12px;
+  margin:44px 0 14px;
 }
 h1 {
   font-weight:500;
-  font-size:42px;
+  font-size:56px;
   line-height:1.18;
   letter-spacing:-1.5px;
-  margin:0 0 30px;
+  margin:0 0 38px;
   color:#183b56;
 }
 h2 {
-  font-size:26px;
+  font-size:32px;
   font-weight:500;
   letter-spacing:-.6px;
   margin:0 0 20px;
   color:#173952;
 }
 h3 {
-  font-size:19px;
+  font-size:22px;
   font-weight:600;
   color:#213e54;
   margin:0 0 8px;
@@ -163,18 +166,76 @@ p {
   margin:0 0 16px;
 }
 .hero {
-  margin:0 0 35px;
+  margin:0 0 44px;
 }
-.hero img {
-  display:block;
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  object-position:center 55%;
+.hero-carousel {
+  position:relative;
+}
+.hero-track {
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:3987 / 1297;
+  border:1px solid #e3e7eb;
   background:#e9eef1;
 }
+.hero-track img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.hero-track img:not(.active) {
+  display:none;
+}
+.carousel-control {
+  position:absolute;
+  z-index:2;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;
+  height:80px;
+  border:0;
+  background:transparent;
+  color:rgba(34,43,57,.42);
+  padding:0;
+  font-size:64px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  line-height:1;
+  cursor:pointer;
+  opacity:1;
+}
+.carousel-control:hover {
+  color:rgba(34,43,57,.72);
+}
+.carousel-control.prev {
+  left:8px;
+}
+.carousel-control.next {
+  right:8px;
+}
+.carousel-dots {
+  display:flex;
+  position:relative;
+  z-index:2;
+  justify-content:center;
+  gap:9px;
+  margin-top:14px;
+}
+.carousel-dots button {
+  width:10px;
+  height:10px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#c7c7c7;
+  cursor:pointer;
+}
+.carousel-dots button.active {
+  background:#5fa5c5;
+}
 .hero figcaption {
-  font-size:12px;
+  font-size:13px;
   color:#89939c;
   display:flex;
   justify-content:space-between;
@@ -182,7 +243,7 @@ p {
   padding-top:8px;
 }
 .intro {
-  max-width:860px;
+  max-width:980px;
   color:#596571;
   line-height:1.85;
 }
@@ -191,7 +252,7 @@ p {
   font-weight:600;
 }
 .intro .lead {
-  font-size:21px;
+  font-size:28px;
   line-height:1.55;
   color:#293f51;
   letter-spacing:-.3px;
@@ -199,12 +260,12 @@ p {
 }
 .topicline {
   display:flex;
-  gap:23px;
+  gap:28px;
   flex-wrap:wrap;
   color:#456782;
-  font-size:13px;
+  font-size:15px;
   letter-spacing:.2px;
-  margin:22px 0 44px;
+  margin:28px 0 56px;
 }
 .section-head {
   display:flex;
@@ -216,25 +277,25 @@ p {
   margin-bottom:12px;
 }
 .section-head span {
-  font-size:12px;
+  font-size:13px;
   color:#8995a0;
 }
 .newsrow {
   display:grid;
-  grid-template-columns:90px 76px 1fr;
-  gap:19px;
-  padding:21px 0;
+  grid-template-columns:108px 94px 1fr;
+  gap:24px;
+  padding:26px 0;
   border-bottom:1px solid #e6e9ed;
   align-items:baseline;
-  font-size:15px;
+  font-size:17px;
 }
 .date {
   color:#7c8996;
-  font-size:14px;
+  font-size:16px;
   font-variant-numeric:tabular-nums;
 }
 .tag {
-  font-size:11px;
+  font-size:12px;
   letter-spacing:1px;
   color:#426984;
 }
@@ -242,26 +303,26 @@ p {
   margin:0;
 }
 .footer {
-  width:calc(100% - 80px);
-  max-width:1040px;
+  width:calc(100% - 112px);
+  max-width:1208px;
   border-top:1px solid #e5e9ed;
   display:flex;
   align-items:flex-end;
   justify-content:space-between;
   gap:24px;
-  margin:65px auto 0;
-  padding:27px 0 30px;
-  font-size:12px;
+  margin:82px auto 0;
+  padding:34px 0 38px;
+  font-size:14px;
   color:#9099a2;
 }
 .footer-affiliation {
-  font-size:13px;
+  font-size:15px;
   line-height:1.7;
   color:#85909c;
 }
 .footer-affiliation b {
   display:block;
-  font-size:14px;
+  font-size:16px;
   color:#556574;
   font-weight:600;
   margin-bottom:7px;
@@ -270,47 +331,54 @@ p {
   margin:0;
 }
 .description {
-  max-width:740px;
+  max-width:880px;
   color:#667482;
-  margin-bottom:38px;
+  margin-bottom:48px;
 }
 .group {
-  margin-top:40px;
+  margin-top:52px;
 }
 .person {
   display:flex;
   align-items:center;
-  gap:26px;
-  padding:26px 0;
+  gap:40px;
+  padding:34px 0;
   border-bottom:1px solid #e6e9ed;
 }
 .portrait {
-  width:100px;
-  height:118px;
+  width:220px;
+  height:282px;
   display:grid;
   place-items:center;
   background:#edf1f4;
   font-size:24px;
   color:#8e9eab;
   flex:none;
+  overflow:hidden;
+}
+.portrait img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 .person p {
   color:#77838d;
-  font-size:14px;
+  font-size:16px;
   margin:4px 0;
 }
 .grid {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:26px;
+  gap:40px;
 }
 .project {
   border-top:2px solid #35566f;
-  padding:23px 0 20px;
+  padding:30px 0 26px;
 }
 .number {
   color:#8d9ba6;
-  font-size:12px;
+  font-size:13px;
   letter-spacing:2px;
   margin-bottom:20px;
 }
@@ -319,34 +387,41 @@ p {
 }
 .project small {
   color:#4c728c;
-  font-size:13px;
+  font-size:15px;
 }
 .publication {
-  padding:27px 0;
+  padding:32px 0;
   border-bottom:1px solid #e1e6eb;
+}
+.pub-index {
+  color:#4e7089;
+  font-weight:700;
+  font-variant-numeric:tabular-nums;
+  margin-right:10px;
+  white-space:nowrap;
 }
 .publication p {
   color:#74808b;
   margin:4px 0;
-  font-size:15px;
+  font-size:17px;
 }
 .publication em {
   color:#4e7089;
   font-style:normal;
-  font-size:14px;
+  font-size:15px;
 }
 .contact-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:48px;
-  margin-top:45px;
+  gap:64px;
+  margin-top:56px;
 }
 .contact-item {
   border-top:1px solid #dce3e8;
-  padding:22px 0;
+  padding:28px 0;
 }
 .contact-item h3 {
-  font-size:13px;
+  font-size:14px;
   text-transform:uppercase;
   letter-spacing:1.4px;
   color:#7b8b98;
@@ -354,8 +429,27 @@ p {
 .contact-item p {
   color:#42596c;
 }
+.map-section {
+  margin-top:32px;
+  border-top:1px solid #dce3e8;
+  padding-top:28px;
+}
+.map-section .section-head {
+  margin-bottom:22px;
+}
+.map-section p {
+  color:#42596c;
+  margin-bottom:20px;
+}
+.map-section iframe {
+  display:block;
+  width:100%;
+  height:420px;
+  border:0;
+  background:#e9eef1;
+}
 .note {
-  font-size:13px;
+  font-size:15px;
   color:#8b97a2;
   margin-top:28px;
 }
@@ -364,49 +458,61 @@ button.menu {
 }
 @media(max-width:1000px) {
   .site-header {
-    gap:16px;
-    padding:28px 30px;
+    gap:18px;
+    padding:32px 30px;
   }
   .brand {
-    font-size:23px;
-    gap:10px;
+    max-width:430px;
   }
-  .brand small {
-    font-size:9px;
-    letter-spacing:1.1px;
+  .brand-logo {
+    height:92px;
+    max-width:430px;
   }
   nav {
     gap:0;
   }
   nav a {
-    padding:10px 8px;
-    font-size:14px;
+    padding:11px 8px;
+    font-size:15px;
   }
   .main {
-    padding:30px 30px 0;
+    padding:34px 30px 0;
   }
   .footer {
     width:calc(100% - 60px);
   }
-  .hero img {
-    height:300px;
+  .carousel-control {
+    width:38px;
+    height:68px;
+    font-size:54px;
   }
   h1 {
-    font-size:36px;
+    font-size:44px;
+  }
+  .intro .lead {
+    font-size:24px;
+  }
+  .portrait {
+    width:180px;
+    height:232px;
   }
 }
 @media(max-width:760px) {
+  body {
+    font-size:16px;
+    line-height:1.75;
+  }
   .site-header {
     display:block;
-    padding:24px;
+    padding:26px 24px;
   }
   .brand {
-    font-size:22px;
     width:max-content;
+    max-width:calc(100% - 96px);
   }
-  .brand small {
-    font-size:10px;
-    margin-top:8px;
+  .brand-logo {
+    height:76px;
+    max-width:100%;
   }
   .mark {
     height:27px;
@@ -415,11 +521,11 @@ button.menu {
     display:block;
     position:absolute;
     right:24px;
-    top:28px;
+    top:34px;
     border:1px solid #cbd5dd;
     background:transparent;
     color:#294e69;
-    padding:7px 12px;
+    padding:8px 13px;
     font-size:14px;
   }
   nav {
@@ -433,7 +539,7 @@ button.menu {
     flex-direction:column;
   }
   nav a {
-    padding:10px 12px;
+    padding:12px 12px;
     border-bottom:0;
     border-left:2px solid transparent;
   }
@@ -442,7 +548,7 @@ button.menu {
   }
   .main {
     margin:0;
-    padding:26px 24px 0;
+    padding:30px 24px 0;
   }
   .topline {
     font-size:10px;
@@ -454,17 +560,29 @@ button.menu {
     margin-top:26px;
   }
   h1 {
-    font-size:32px;
-    margin-bottom:24px;
+    font-size:36px;
+    margin-bottom:28px;
   }
-  .hero img {
-    height:220px;
+  .carousel-control {
+    width:30px;
+    height:52px;
+    font-size:42px;
+  }
+  .carousel-control.prev {
+    left:8px;
+  }
+  .carousel-control.next {
+    right:8px;
+  }
+  .carousel-dots {
+    gap:8px;
+    margin-top:12px;
   }
   .hero figcaption {
     font-size:10px;
   }
   .intro .lead {
-    font-size:19px;
+    font-size:21px;
   }
   .topicline {
     gap:10px 18px;
@@ -493,7 +611,7 @@ button.menu {
     padding-bottom:24px;
   }
   .portrait {
-    width:80px;
-    height:100px;
+    width:150px;
+    height:192px;
   }
 }

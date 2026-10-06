@@ -536,25 +536,31 @@ button.menu {
     line-height:1.75;
   }
   .site-header {
-    display:block;
-    padding:26px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:18px;
+    padding:24px;
   }
   .brand {
-    width:max-content;
-    max-width:calc(100% - 96px);
+    flex:1 1 auto;
+    min-width:0;
+    max-width:calc(100% - 92px);
   }
   .brand-logo {
-    height:76px;
-    max-width:100%;
+    width:100%;
+    height:auto;
+    max-height:72px;
+    object-position:left center;
   }
   .mark {
     height:27px;
   }
   button.menu {
     display:block;
-    position:absolute;
-    right:24px;
-    top:34px;
+    position:static;
+    flex:0 0 auto;
     border:1px solid #cbd5dd;
     background:transparent;
     color:#294e69;
@@ -563,6 +569,7 @@ button.menu {
   }
   nav {
     display:none;
+    flex:0 0 100%;
     margin-top:22px;
     align-items:stretch;
     gap:3px;
@@ -646,5 +653,21 @@ button.menu {
   .portrait {
     width:150px;
     height:192px;
+  }
+}
+@media(max-width:360px) {
+  .site-header {
+    gap:14px;
+    padding:22px 18px;
+  }
+  .brand {
+    max-width:calc(100% - 82px);
+  }
+  .brand-logo {
+    max-height:58px;
+  }
+  button.menu {
+    padding:7px 10px;
+    font-size:13px;
   }
 }
